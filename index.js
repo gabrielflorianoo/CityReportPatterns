@@ -7,10 +7,11 @@ import FileReader from "./src/FileReader.js";
 
 const { format, filename } = CLIHandler.parseArgs(process.argv);
 
-const citiesData = !filename ? FileReader.readJSON("data/cidades-2.json") : 
-    filename.endsWith(".json")
-    ? FileReader.readJSON(filename)
-    : FileReader.readCSV(filename);
+const citiesData = !filename
+    ? FileReader.readJSON("data/cidades-2.json")
+    : filename.endsWith(".json")
+      ? FileReader.readJSON(filename)
+      : FileReader.readCSV(filename);
 
 const reporter = new CitiesReporter({
         formaterStrategy: getFormaterFactory(format),
