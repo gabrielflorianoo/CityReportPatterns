@@ -12,8 +12,8 @@ Este projeto tem como objetivo gerar relatórios de cidades em diferentes format
 2. **Padrão Estrutural: Adapter Pattern**
    - O padrão **Adapter** foi implementado para adaptar os formatadores `FormaterHTML` e `FormaterTXT` a uma interface comum definida pela classe abstrata [`AbstractFormater`](./src/formaters/AbstractFormater.js). As classes [`HTMLAdapter`](./src/adapters/HTMLAdapter.js) e [`TXTAdapter`](./src/adapters/TXTAdapter.js) encapsulam o comportamento dos formatadores específicos, permitindo que o código cliente interaja com uma interface única para diferentes tipos de saída.
    
-3. **Padrão Comportamental: Strategy Pattern**
-   - O padrão **Strategy** foi utilizado para permitir que a estratégia de formatação seja escolhida em tempo de execução. A classe [`CitiesReporter`](./src/CitiesReporter.js) recebe a estratégia de formatação (HTML, TXT) como parâmetro e aplica a formatação ao relatório. Isso permite que o tipo de formatação seja alterado dinamicamente sem modificar o código da classe `CitiesReporter`.
+3. **Padrão Comportamental: Chain of Responsibility Pattern**
+   - O padrão **Chain of Responsibility** foi utilizado para permitir o encadeamento de processadores de dados de forma flexível. A classe abstrata [`AbstractProcessor`](./src/processors/AbstractProcessor.js) define a estrutura base para processadores encadeáveis, como o [`SortByName`](./src/processors/Filter.js), que ordena os dados por nome. Novos processadores podem ser adicionados à cadeia sem alterar os processadores existentes, permitindo que a lógica de processamento seja configurada dinamicamente.
 
 ### Refatorações Realizadas
 
