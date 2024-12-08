@@ -1,6 +1,5 @@
 import assert from 'assert';
 import { describe, it } from 'node:test';
-import FileReader from './src/FileReader.js';
 import CitiesReporter from './src/CitiesReporter.js';
 import getFormaterFactory from './src/formaters/getFormaterFactory.js';
 
